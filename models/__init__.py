@@ -15,6 +15,7 @@ class Backbone(object):
         from metrics import pixelwise_sensitivity
         from initializers import PriorProbability
 
+        # 自定义指标和初始化方法
         self.custom_objects = {
             # included custom metrics in case the saved model need to be compiled
             'dice_coeff': dice_coeff,
@@ -245,7 +246,7 @@ class Backbone(object):
         """
         raise NotImplementedError('backbone method not implemented')
 
-
+# 辅助函数，根据backbone_name 返回相应的骨干网络对象
 def backbone(backbone_name, **kwargs):
     """
     Returns a backbone object for the given backbone.
